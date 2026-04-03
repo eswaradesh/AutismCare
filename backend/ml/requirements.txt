@@ -1,0 +1,31 @@
+# AutismCare ML Module Dependencies
+# Behavioural Intelligence Pipeline
+
+# Core ML and data processing
+numpy>=1.22.0
+pandas>=1.4.0
+scikit-learn>=1.0.0
+
+# Time series analysis
+python-dateutil>=2.8.2
+statsmodels>=0.13.0
+
+# For Prophet forecasting (optional - install separately if needed)
+# prophet>=1.1.0
+
+# Explainability
+shap>=0.41.0
+
+# API Server
+fastapi>=0.95.0
+uvicorn>=0.22.0
+pydantic>=1.10.0
+
+# Utilities
+scipy>=1.8.0
+python-dotenv>=0.19.0
+
+# Optional: Speech recognition integration
+# azure-cognitiveservices-speech>=1.25.0
+# google-cloud-speech>=2.16.0
+# openai-whisper>=20230314

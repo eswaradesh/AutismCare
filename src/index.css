@@ -1,0 +1,253 @@
+/* Google Fonts removed for privacy (GDPR). Self-host fonts in production. */
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap'); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AutismCare Design System - Calming, Supportive, Accessible */
+
+@layer base {
+  :root {
+    /* Core backgrounds - warm cream tones */
+    --background: 40 40% 98%;
+    --foreground: 220 25% 20%;
+
+    /* Card surfaces */
+    --card: 40 35% 99%;
+    --card-foreground: 220 25% 20%;
+
+    /* Popovers */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 20%;
+
+    /* Primary - Calming sage/teal */
+    --primary: 160 35% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft lavender */
+    --secondary: 270 30% 94%;
+    --secondary-foreground: 270 25% 35%;
+
+    /* Muted - Subtle gray-green */
+    --muted: 150 15% 92%;
+    --muted-foreground: 200 15% 45%;
+
+    /* Accent - Warm coral/peach */
+    --accent: 15 70% 92%;
+    --accent-foreground: 15 60% 35%;
+
+    /* Destructive */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 160 20% 88%;
+    --input: 160 20% 92%;
+    --ring: 160 35% 45%;
+
+    /* Radius - Rounded and friendly */
+    --radius: 1rem;
+
+    /* Custom semantic tokens */
+    --success: 145 50% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 35 85% 55%;
+    --warning-foreground: 35 80% 20%;
+    --info: 200 70% 50%;
+    --info-foreground: 0 0% 100%;
+
+    /* Gradients */
+    --gradient-calm: linear-gradient(135deg, hsl(160 35% 45%) 0%, hsl(180 40% 50%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(15 70% 92%) 0%, hsl(35 75% 90%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(40 40% 98%) 0%, hsl(160 20% 96%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(160 35% 45% / 0.12);
+    --shadow-card: 0 2px 12px -2px hsl(220 25% 20% / 0.08);
+    --shadow-elevated: 0 8px 30px -8px hsl(160 35% 45% / 0.18);
+
+    /* Navigation */
+    --nav-height: 4rem;
+    --nav-background: 40 40% 98%;
+    --nav-active: 160 35% 45%;
+
+    /* Sidebar */
+    --sidebar-background: 40 35% 97%;
+    --sidebar-foreground: 220 25% 30%;
+    --sidebar-primary: 160 35% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 25% 92%;
+    --sidebar-accent-foreground: 160 35% 30%;
+    --sidebar-border: 160 15% 90%;
+    --sidebar-ring: 160 35% 45%;
+  }
+
+  .dark {
+    --background: 220 25% 10%;
+    --foreground: 40 20% 95%;
+
+    --card: 220 25% 13%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 220 25% 13%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 160 40% 55%;
+    --primary-foreground: 220 25% 10%;
+
+    --secondary: 270 20% 20%;
+    --secondary-foreground: 270 30% 85%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 200 15% 60%;
+
+    --accent: 15 50% 25%;
+    --accent-foreground: 15 70% 90%;
+
+    --destructive: 0 55% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 160 40% 55%;
+
+    --success: 145 45% 40%;
+    --warning: 35 75% 50%;
+    --info: 200 60% 45%;
+
+    --sidebar-background: 220 25% 12%;
+    --sidebar-foreground: 40 15% 90%;
+    --sidebar-primary: 160 40% 55%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 20% 18%;
+    --sidebar-accent-foreground: 40 15% 90%;
+    --sidebar-border: 220 20% 18%;
+    --sidebar-ring: 160 40% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Nunito', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground min-h-screen;
+    background: var(--gradient-soft);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', 'Nunito', system-ui, sans-serif;
+    font-weight: 600;
+  }
+}
+
+@layer components {
+  .btn-primary-gradient {
+    background: var(--gradient-calm);
+    @apply text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .card-elevated {
+    box-shadow: var(--shadow-card);
+    @apply bg-card rounded-2xl border border-border/50 transition-shadow duration-300 hover:shadow-lg;
+  }
+
+  .input-calm {
+    @apply bg-input/50 border-border rounded-xl px-4 py-3 transition-all duration-200;
+    @apply focus:ring-2 focus:ring-primary/30 focus:border-primary focus:outline-none;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-200;
+    @apply text-muted-foreground hover:text-foreground hover:bg-muted;
+  }
+
+  .nav-item-active {
+    @apply text-primary bg-primary/10;
+  }
+
+  .disclaimer-banner {
+    @apply bg-accent/50 border border-accent-foreground/10 rounded-xl px-4 py-3 text-sm text-accent-foreground;
+  }
+
+  .floating-action {
+    @apply fixed bottom-24 right-4 w-14 h-14 rounded-full shadow-elevated;
+    @apply flex items-center justify-center transition-all duration-300;
+    @apply hover:scale-110 active:scale-95;
+    background: var(--gradient-calm);
+  }
+
+  .page-container {
+    @apply min-h-screen pb-20 px-4 pt-4 md:pb-8 md:pt-8 md:px-8;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-foreground mb-3;
+  }
+
+  .emotion-chip {
+    @apply px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200;
+    @apply border-2 cursor-pointer;
+  }
+
+  .emotion-chip-selected {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+
+  .emotion-chip-unselected {
+    @apply bg-background text-muted-foreground border-border hover:border-primary/50;
+  }
+}
+
+@layer utilities {
+  .safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .animate-gentle-pulse {
+    animation: gentle-pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: hsl(var(--background) / 0.85);
+  }
+}
